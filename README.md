@@ -2,28 +2,33 @@
 
 ```
 pip install -r requirements.txt
-
 ```
 
 # Using
 
+```
+python main.py
+```
+
 ## get
 
 ```
-python get_server.py
-
+curl localhost:8000
 ```
 
-ブラウザで'http://localhost:8765'にアクセス  
+result:  
 
+```json
+{"mgs":"failure"}
+```
 
 ## post
 
 ```
-python post_server.py
-
+curl -XPOST -d '{ "hoge" : 1, "bar" : "bar" }' http://localhost:8000
 ```
 
-```
-python post_client.py
+result:  
+```json
+{"status": 200, "result": {"hoge": 100, "bar": "bar"}}
 ```
